@@ -10,7 +10,7 @@ class ApiResponse():
         return self.response.status_code
     
     def get_json(self):
-        print(self.response.json())
+        # print(self.response.json())
         return self.response.json()
 
     
