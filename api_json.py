@@ -21,3 +21,6 @@ class ApiResponse():
     def put(self,data):
         respone=requests.put(self.full_url,json=data)
         return respone
+    
+    def patch(self, data):
+        return requests.patch(self.full_url, json=data)

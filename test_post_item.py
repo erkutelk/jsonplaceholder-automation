@@ -33,3 +33,13 @@ def test_put_update():
 
     assert json_data['title']=='Güncellenmiş','🟥 Title güncellenmiyor'
     assert json_data['body']=='Güncellenmiş','🟥 Body güncellenmiyor'
+
+
+def test_patch_post_title():
+    update_data = {"title": "Erkut"}
+    api = ApiResponse('/posts/1')
+    response = api.patch(update_data)
+    
+    assert response.status_code == 200, "🟥 PATCH isteği başarısız"
+    json_data = response.json()
+    assert json_data['title'] == "Erkut", "🟥 Title güncellenemedi"
