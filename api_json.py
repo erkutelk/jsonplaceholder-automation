@@ -17,3 +17,7 @@ class ApiResponse():
     def post(self, data):
         response = requests.post(self.full_url, json=data)
         return response
+    
+    def put(self,data):
+        respone=requests.put(self.full_url,json=data)
+        return respone
