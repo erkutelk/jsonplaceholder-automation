@@ -1,7 +1,7 @@
 import requests
 
 class ApiResponse():
-    BASE_URL = 'https://jsonplaceholder.typicode.com'
+    BASE_URL = 'https://jsonplaceholder.typicode.com/'
 
     def __init__(self, url):
         self.url = url
@@ -24,3 +24,6 @@ class ApiResponse():
     
     def patch(self, data):
         return requests.patch(self.full_url, json=data)
+    
+    def delete(self):
+        return requests.delete(self.full_url)

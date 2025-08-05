@@ -26,7 +26,7 @@ expected_post_commets={'postId': 1,
 
 def test_post_first_comments_get():
     print('[TEST]\t/posts/1/comments')
-    api = ApiResponse('/posts/1/comments')
+    api = ApiResponse('posts/1/comments')
     actual_data = api.get_json()
 
     first_comment = actual_data[0]
@@ -44,7 +44,7 @@ post_id={'postId': 1,
 
 def test_post_first_comments_post_id():
     print('[TEST]\t/comments?postId=1')
-    api = ApiResponse('/comments?postId=1')
+    api = ApiResponse('comments?postId=1')
     actual_data = api.get_json()
     
     first_adet=actual_data[0]

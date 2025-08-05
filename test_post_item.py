@@ -7,7 +7,7 @@ def test_post_new_post():
         'body': 'Elik',
         'userId': 1
     }
-    api = ApiResponse('/posts')
+    api = ApiResponse('posts')
     response = api.post(data)
 
     assert response.status_code == 201, "🟥 POST isteği başarısız oldu"
@@ -25,7 +25,7 @@ def test_put_update():
         'userId':1
     }
 
-    api=ApiResponse('/posts/1')
+    api=ApiResponse('posts/1')
     response=api.put(data)
 
     assert response.status_code==200
@@ -37,9 +37,15 @@ def test_put_update():
 
 def test_patch_post_title():
     update_data = {"title": "Erkut"}
-    api = ApiResponse('/posts/1')
+    api = ApiResponse('posts/1')
     response = api.patch(update_data)
     
     assert response.status_code == 200, "🟥 PATCH isteği başarısız"
     json_data = response.json()
     assert json_data['title'] == "Erkut", "🟥 Title güncellenemedi"
+
+
+def test_delete_post():
+    api = ApiResponse('posts/1')
+    response = api.delete()
+    assert response.status_code == 200 or response.status_code == 204, "🟥 Delete işlemi başarısız başarısız"
