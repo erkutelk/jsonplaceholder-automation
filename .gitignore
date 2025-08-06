@@ -1,3 +1,5 @@
 .pytest_cache/
 __pycache__/
 test_log.log
+rapor.html
+assets/
