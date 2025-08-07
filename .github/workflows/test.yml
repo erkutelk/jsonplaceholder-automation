@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 
 jobs:
@@ -30,4 +31,4 @@ jobs:
 
 
     - name: Testleri çalıştır
-      run: pytest --html=rapor.html --self-contained-html
+      run: pytest -v --html=rapor.html --self-contained-html
